@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swish Cup 3rd — 全国開催パートナー募集</title>
+  <meta name="description" content="小学3・4年生対象のシュートトーナメント「Swish Cup 3rd」を全国同日開催しませんか。同じルールで未来の日本代表シューターを発掘しましょう。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.x/dist/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple-deep: #1E1A52;
+      --purple-mid: #26215C;
+      --purple-light: #3C3489;
+      --purple-pale: #EEEDFE;
+      --purple-muted: #AFA9EC;
+      --purple-sub: #7F77DD;
+      --gold: #EF9F27;
+      --gold-dark: #BA7517;
+      --gold-deep: #412402;
+      --gold-light: #FAEEDA;
+      --gold-border: #FAC775;
+      --green-light: #E1F5EE;
+      --green-border: #9FE1CB;
+      --green-text: #085041;
+      --white: #ffffff;
+      --text: #1a1a2e;
+      --text-sub: #555577;
+      --border: #e0dff5;
+      --bg: #f8f8fc;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--purple-mid);
+      border-radius: var(--radius-lg);
+      padding: 2.75rem 2.25rem 2.25rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(239,159,39,0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(239,159,39,0.1) 1px, transparent 1px),
+        radial-gradient(circle at 50% 115%, rgba(239,159,39,0.2) 0%, transparent 58%);
+      background-size: 40px 40px, 40px 40px, 100% 100%;
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      margin-bottom: 1.25rem;
+      text-shadow: 0 2px 12px rgba(239,159,39,0.4);
+    }
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 2px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    .hero-badge {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.25rem;
+    }
+    .hero-badge-icon {
+      font-size: 32px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .hero-badge-text {
+      background: var(--gold);
+      color: var(--purple-mid);
+      font-size: clamp(18px, 4vw, 24px);
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      line-height: 1.3;
+    }
+    .hero-sub {
+      position: relative;
+      font-size: 13px;
+      color: var(--purple-muted);
+      line-height: 1.75;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.75rem;
+      margin-top: 1.5rem;
+      position: relative;
+    }
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: #CECBF6;
+    }
+    .hero-meta-item i { color: var(--gold); font-size: 15px; }
+
+    /* ── CONCEPT ── */
+    .concept {
+      background: var(--purple-mid);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2rem 1.75rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .concept::before {
+      content: '"';
+      position: absolute;
+      top: -12px;
+      left: 18px;
+      font-size: 130px;
+      color: rgba(239,159,39,0.1);
+      font-family: Georgia, serif;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .concept-tagline {
+      position: relative;
+      font-size: clamp(16px, 3.5vw, 20px);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+    .concept-subtitle {
+      position: relative;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--purple-sub);
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    .concept-body {
+      position: relative;
+      font-size: 13px;
+      color: var(--purple-muted);
+      line-height: 1.9;
+    }
+    .concept-cta {
+      position: relative;
+      margin-top: 1.25rem;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1.6;
+    }
+
+    /* ── SECTION ── */
+    .section { margin-bottom: 2rem; }
+
+    .sec-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1rem;
+      padding-bottom: 0.65rem;
+      border-bottom: 2px solid var(--purple-light);
+    }
+    .sec-head i { color: var(--purple-light); font-size: 20px; }
+    .sec-head h2 { font-size: 15px; font-weight: 700; color: var(--text); }
+    .sec-badge {
+      margin-left: auto;
+      font-size: 11px;
+      background: var(--purple-pale);
+      color: var(--purple-light);
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* ── PREV BANNER ── */
+    .prev-banner-link { display: block; text-decoration: none; border-radius: var(--radius-lg); overflow: hidden; }
+    .prev-banner-wrap {
+      position: relative;
+      width: 100%;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(30,26,82,0.25);
+    }
+    .prev-banner-wrap img { width: 100%; height: auto; display: block; }
+    .prev-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10,8,30,0.38);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .prev-banner-link:hover .prev-banner-overlay,
+    .prev-banner-link:focus .prev-banner-overlay { opacity: 1; }
+    .prev-banner-play {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+    }
+    .prev-banner-play i { font-size: 52px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6)); color: #FF0000; }
+    .prev-banner-play span { font-size: 14px; font-weight: 500; letter-spacing: 0.04em; text-shadow: 0 1px 4px rgba(0,0,0,0.7); }
+
+    /* ── VIDEO GALLERY ── */
+    .video-playlist-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 0.85rem;
+      font-size: 12px;
+      color: var(--purple-light);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .video-playlist-link:hover { text-decoration: underline; }
+    .video-playlist-link i { font-size: 14px; }
+    /* ── RULES ── */
+    .rule-list { list-style: none; }
+    .rule-list li {
+      display: flex;
+      gap: 12px;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      line-height: 1.65;
+      align-items: flex-start;
+    }
+    .rule-list li:last-child { border-bottom: none; }
+    .rule-num {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--purple-light);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .angle-grid { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+    .angle-pill {
+      background: var(--purple-pale);
+      color: var(--purple-light);
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+
+    /* ── ITEMS ── */
+    .item-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    .item-row:last-child { border-bottom: none; }
+    .item-row > i { color: var(--gold-dark); font-size: 17px; margin-top: 1px; flex-shrink: 0; }
+    .item-note { font-size: 12px; color: var(--text-sub); display: block; margin-top: 3px; }
+    .item-link { color: var(--purple-light); text-decoration: none; }
+    .item-link:hover { text-decoration: underline; }
+    .item-optional { color: var(--text-sub); }
+
+    /* ── STAFF CARDS ── */
+    .staff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+      gap: 8px;
+    }
+    .staff-card {
+      background: var(--purple-mid);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 0.75rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-align: center;
+    }
+    .staff-pips {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      justify-content: center;
+      min-height: 30px;
+      align-items: center;
+    }
+    .pip {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(239,159,39,0.38);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pip i { font-size: 14px; color: var(--gold); }
+    .staff-count { font-size: 20px; font-weight: 700; color: var(--gold); line-height: 1; }
+    .staff-name { font-size: 12px; font-weight: 500; color: #CECBF6; line-height: 1.4; }
+    .staff-sub { font-size: 10px; color: var(--purple-sub); line-height: 1.4; }
+
+    /* ── EACH BOX ── */
+    .each-box {
+      background: var(--green-light);
+      border: 1px solid var(--green-border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+    }
+    .each-box p { font-size: 13px; color: var(--green-text); line-height: 1.8; }
+
+    /* ── LAW BOX ── */
+    .law-box {
+      background: var(--gold-light);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+    }
+    .law-box > p { font-size: 13px; color: #633806; line-height: 1.8; }
+    .law-box strong { color: var(--gold-deep); font-weight: 700; }
+
+    .law-example {
+      margin-top: 1rem;
+      border-top: 1px solid var(--gold-border);
+      padding-top: 1rem;
+    }
+    .law-example-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #854F0B;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.6rem;
+    }
+    .law-premise { font-size: 12px; color: #633806; margin-bottom: 0.75rem; }
+    .law-rules { display: flex; flex-direction: column; gap: 6px; }
+    .law-rule-row {
+      background: rgba(255,255,255,0.55);
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 1rem;
+    }
+    .law-rule-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: #854F0B;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 3px;
+    }
+    .law-rule-calc { font-size: 13px; color: var(--gold-deep); line-height: 1.5; }
+    .law-rule-result { font-size: 13px; font-weight: 700; color: var(--gold-deep); margin-top: 3px; }
+    .law-conclusion {
+      margin-top: 0.75rem;
+      background: var(--gold-border);
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 1rem;
+      font-size: 12px;
+      color: var(--gold-deep);
+      line-height: 1.7;
+    }
+    .law-note { margin-top: 0.75rem; font-size: 11px; color: #854F0B; }
+
+    /* ── STAFF NOTE ── */
+    .staff-note {
+      margin-top: 0.85rem;
+      font-size: 12px;
+      color: var(--text-sub);
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      line-height: 1.65;
+    }
+    .staff-note i { color: var(--purple-light); font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── ZAMST ── */
+    .zamst-box {
+      background: #EEF4FF;
+      border: 1px solid #C5D8FF;
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+    }
+    .zamst-logo-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 0.85rem;
+    }
+    .zamst-brand {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1A3E8C;
+      letter-spacing: 0.1em;
+    }
+    .zamst-label {
+      font-size: 11px;
+      font-weight: 500;
+      background: #1A3E8C;
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .zamst-body {
+      font-size: 13px;
+      color: #1e2d55;
+      line-height: 1.8;
+      margin-bottom: 0.85rem;
+    }
+    .zamst-body strong { color: #1A3E8C; font-weight: 700; }
+    .zamst-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #1A3E8C;
+      text-decoration: none;
+    }
+    .zamst-link:hover { text-decoration: underline; }
+    .zamst-link i { font-size: 13px; }
+
+    /* ── REQUEST ── */
+    .request-list { display: flex; flex-direction: column; gap: 0; }
+    .request-item {
+      display: flex;
+      gap: 14px;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .request-item:last-child { border-bottom: none; }
+    .request-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--purple-mid);
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .request-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .request-body p {
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.75;
+    }
+    .req-link { color: var(--purple-light); text-decoration: none; }
+    .req-link:hover { text-decoration: underline; }
+
+    /* ── FLYER ── */
+    .flyer-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(30,26,82,0.2);
+    }
+    .flyer-wrap img { width: 100%; height: auto; display: block; }
+
+    /* ── VOICES ── */
+    .voices { display: flex; flex-direction: column; gap: 10px; }
+    .voice-card {
+      background: var(--purple-pale);
+      border-left: 3px solid var(--purple-light);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem 1rem 1rem;
+      position: relative;
+    }
+    .voice-quote-icon {
+      font-size: 36px;
+      line-height: 1;
+      color: var(--purple-light);
+      opacity: 0.25;
+      font-family: Georgia, serif;
+      position: absolute;
+      top: 6px;
+      left: 10px;
+      user-select: none;
+    }
+    .voice-card p {
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.8;
+      padding-left: 1.5rem;
+    }
+
+    /* ── FOOTER ── */
+    .foot {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-sub);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      .wrapper { padding: 1.25rem 1rem 3rem; }
+      .hero { padding: 2rem 1.25rem 1.75rem; }
+      .hero-badge-text { font-size: 16px; padding: 8px 14px; }
+      .concept { padding: 1.5rem 1.25rem 1.25rem; }
+      .staff-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-eyebrow">全国開催パートナー募集</div>
+      <div class="hero-badge">
+        <i class="ti ti-trophy hero-badge-icon" aria-hidden="true"></i>
+        <div class="hero-badge-text">あなたのコートで<br>Swish Cup 3rd を開こう</div>
+      </div>
+      <p class="hero-sub">同じルールで全国同日開催し、未来の日本代表シューターを発掘しましょう。</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item"><i class="ti ti-calendar" aria-hidden="true"></i> 2026年8月2日（日）</div>
+        <div class="hero-meta-item"><i class="ti ti-users" aria-hidden="true"></i> 小学3〜4年生（男女）</div>
+        <div class="hero-meta-item"><i class="ti ti-currency-yen" aria-hidden="true"></i> 参加費無料</div>
+      </div>
+    </header>
+
+    <!-- CONCEPT -->
+    <section class="concept" aria-label="大会コンセプト">
+      <div class="concept-tagline">"誰もが優勝のチャンスがある"<br>真剣勝負の場を作る</div>
+      <div class="concept-subtitle">あきひと社長が大会開催に至った背景・思い</div>
+      <p class="concept-body">私がミニバス保護者と話をしたときに、小学4年生以下の子どもたちが深刻な練習不足に陥っていることを知り愕然としました。千葉県船橋市はバスケが盛んな地域にも関わらずバスケがやりたくてもできない子がいることを放っておくことができなかったため、誰もが優勝のチャンスがある真剣勝負の場を作ることを決心しました。</p>
+      <p class="concept-body" style="margin-top: 1rem;">SwishCupは今回で3回目になりますが、この活動を船橋だけにとどめず、様々な地域で開催していくことでより多くの小学3・4年生の選手たちがバスケットボールを好きになり、バスケが上手くなるきっかけになればと考えております。将来的には47都道府県の全国同時開催を目指します。</p>
+      <p class="concept-cta">もし共感いただけるようでしたら一緒に盛り上げていきましょう！</p>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="section" aria-label="大会概要">
+      <div class="sec-head">
+        <i class="ti ti-tournament" aria-hidden="true"></i>
+        <h2>大会概要</h2>
+      </div>
+      <div class="flyer-wrap">
+        <img src="swish-cup-flyer.jpg" alt="Swish Cup 3rd チラシ — 2026年8月2日（日）船橋アリーナ メインコート" loading="lazy">
+      </div>
+    </section>
+
+    <!-- RULES -->
+    <section class="section" aria-label="大会ルール">
+      <div class="sec-head">
+        <i class="ti ti-clipboard-list" aria-hidden="true"></i>
+        <h2>大会ルール</h2>
+        <span class="sec-badge">ミニバス規格</span>
+      </div>
+      <ul class="rule-list">
+        <li><div class="rule-num">1</div><div>参加資格：小学3年生〜4年生（男女）</div></li>
+        <li><div class="rule-num">2</div><div>ゴールの高さ：ミニバス公式 <strong>260cm</strong></div></li>
+        <li>
+          <div class="rule-num">3</div>
+          <div>
+            シュート距離：各角度ゴールから <strong>400cm</strong>（フリースローと同じ）
+            <div class="angle-grid" aria-label="シュート角度">
+              <span class="angle-pill">右 0°</span>
+              <span class="angle-pill">右 45°</span>
+              <span class="angle-pill">正面 90°</span>
+              <span class="angle-pill">左 45°</span>
+              <span class="angle-pill">左 0°</span>
+            </div>
+          </div>
+        </li>
+        <li><div class="rule-num">4</div><div>制限時間：<strong>45秒</strong></div></li>
+        <li><div class="rule-num">5</div><div>試投数：5箇所 × 3本 = 計15本。1本目・2本目は<strong>1点</strong>、3本目は<strong>2点</strong>。満点20点。得点の多い方が勝ち上がり</div></li>
+        <li><div class="rule-num">6</div><div>同点の場合：フリースローを1本ずつ交互に試投し、入数の差が出るまで継続</div></li>
+      </ul>
+    </section>
+
+    <!-- ITEMS -->
+    <section class="section" aria-label="準備物">
+      <div class="sec-head">
+        <i class="ti ti-package" aria-hidden="true"></i>
+        <h2>準備物</h2>
+      </div>
+      <div class="item-row">
+        <i class="ti ti-circle-check" aria-hidden="true"></i>
+        <div><strong>5号ボール</strong>：5個</div>
+      </div>
+      <div class="item-row">
+        <i class="ti ti-circle-check" aria-hidden="true"></i>
+        <div>
+          <strong>ボールスタンド（またはボール置き場）</strong>：1台
+          <span class="item-note">スタンド以外でもOK。<a class="item-link" href="https://www.amazon.co.jp/dp/B0D3GXGXRW" target="_blank" rel="noopener">参考商品 ↗</a></span>
+        </div>
+      </div>
+      <div class="item-row">
+        <i class="ti ti-circle-check" aria-hidden="true"></i>
+        <div>
+          <strong>タイマー</strong>：1台
+          <span class="item-note">45秒計測用</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <i class="ti ti-circle-check" aria-hidden="true"></i>
+        <div>
+          <strong>トーナメント表</strong>
+          <span class="item-note">オンライン生成ツール（<a class="item-link" href="https://the-tournament.net/" target="_blank" rel="noopener">the-tournament.net ↗</a>）または当日紙に手書きでもOK</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <i class="ti ti-circle-check" aria-hidden="true"></i>
+        <div>
+          <strong>動画撮影用カメラ</strong>：1台
+          <span class="item-note">スマートフォン可</span>
+        </div>
+      </div>
+      <div class="item-row">
+        <i class="ti ti-circle-dashed" aria-hidden="true"></i>
+        <div class="item-optional">
+          <strong>景品</strong>（任意）
+          <span class="item-note">有料開催の場合は景表法に準拠（後述）</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAFF -->
+    <section class="section" aria-label="必要人員">
+      <div class="sec-head">
+        <i class="ti ti-users" aria-hidden="true"></i>
+        <h2>必要人員</h2>
+        <span class="sec-badge">合計9名</span>
+      </div>
+      <div class="staff-grid">
+        <div class="staff-card">
+          <div class="staff-pips"><div class="pip"><i class="ti ti-microphone" aria-hidden="true"></i></div></div>
+          <div class="staff-count">1</div>
+          <div class="staff-name">司会</div>
+        </div>
+        <div class="staff-card">
+          <div class="staff-pips">
+            <div class="pip"><i class="ti ti-user" aria-hidden="true"></i></div>
+            <div class="pip"><i class="ti ti-user" aria-hidden="true"></i></div>
+          </div>
+          <div class="staff-count">2</div>
+          <div class="staff-name">リバウンダー</div>
+          <div class="staff-sub">シュートのリバウンド</div>
+        </div>
+        <div class="staff-card">
+          <div class="staff-pips"><div class="pip"><i class="ti ti-user" aria-hidden="true"></i></div></div>
+          <div class="staff-count">1</div>
+          <div class="staff-name">ボールセッター</div>
+          <div class="staff-sub">スタンドへのボール配置</div>
+        </div>
+        <div class="staff-card">
+          <div class="staff-pips"><div class="pip"><i class="ti ti-user" aria-hidden="true"></i></div></div>
+          <div class="staff-count">1</div>
+          <div class="staff-name">トーナメント管理</div>
+          <div class="staff-sub">得点チェック・表の更新</div>
+        </div>
+        <div class="staff-card">
+          <div class="staff-pips"><div class="pip"><i class="ti ti-user" aria-hidden="true"></i></div></div>
+          <div class="staff-count">1</div>
+          <div class="staff-name">得点係</div>
+        </div>
+        <div class="staff-card">
+          <div class="staff-pips"><div class="pip"><i class="ti ti-user" aria-hidden="true"></i></div></div>
+          <div class="staff-count">1</div>
+          <div class="staff-name">タイマー係</div>
+        </div>
+        <div class="staff-card">
+          <div class="staff-pips">
+            <div class="pip"><i class="ti ti-user" aria-hidden="true"></i></div>
+            <div class="pip"><i class="ti ti-user" aria-hidden="true"></i></div>
+          </div>
+          <div class="staff-count">2</div>
+          <div class="staff-name">受付</div>
+        </div>
+      </div>
+      <p class="staff-note"><i class="ti ti-info-circle" aria-hidden="true"></i> 上記は目安の人数です。役割を兼任するなど、必ずしもこの人数を集める必要はありません。</p>
+    </section>
+
+    <!-- EACH -->
+    <section class="section" aria-label="各会場での決定事項">
+      <div class="sec-head">
+        <i class="ti ti-settings" aria-hidden="true"></i>
+        <h2>各会場での決定事項</h2>
+      </div>
+      <div class="each-box">
+        <p>参加人数、参加申込期限、お問い合わせ先などは<strong>各会場の運営者様にてご自由にお決めいただけます。</strong><br>大会ルールと同日開催さえ守っていただければ、進行・集客・告知方法はお任せします。</p>
+      </div>
+    </section>
+
+    <!-- LAW -->
+    <section class="section" aria-label="景品と景表法について">
+      <div class="sec-head">
+        <i class="ti ti-scale" aria-hidden="true"></i>
+        <h2>景品と景表法について</h2>
+      </div>
+      <div class="law-box">
+        <p>参加費は<strong>無料</strong>が基本です。景表法上、参加費が無料であれば景品総額の上限がないため、豪華賞品を選手に提供できます。もし参加費を徴収する場合、景品表示法（景表法）に基づき景品を用意する必要があります。</p>
+        <div class="law-example">
+          <div class="law-example-title">有料開催の場合の計算例</div>
+          <div class="law-premise">参加費 1,000円 × 50名 ＝ 売上 50,000円 の場合</div>
+          <div class="law-rules">
+            <div class="law-rule-row">
+              <div class="law-rule-label">総額ルール</div>
+              <div class="law-rule-calc">売上予定総額の 2% まで</div>
+              <div class="law-rule-result">50,000円 × 0.02 ＝ <strong>景品総額 上限 1,000円</strong></div>
+            </div>
+            <div class="law-rule-row">
+              <div class="law-rule-label">最高額ルール</div>
+              <div class="law-rule-calc">取引価額（5万円）が 5,000円以上のため</div>
+              <div class="law-rule-result">1人あたりの景品上限は <strong>100,000円</strong></div>
+            </div>
+          </div>
+          <div class="law-conclusion">
+            <i class="ti ti-info-circle" style="font-size:14px;vertical-align:-2px;margin-right:4px;" aria-hidden="true"></i>
+            最高額は10万円までOKですが、<strong>景品総額が1,000円まで</strong>しか出せないため、最高額ルールは実質的に機能しません。参加費を徴収する場合は総額管理が重要です。
+          </div>
+        </div>
+        <p class="law-note">※ 詳細は消費者庁「景品表示法」をご確認ください。</p>
+      </div>
+    </section>
+
+    <!-- ZAMST -->
+    <section class="section" aria-label="ザムスト大会応援プログラム">
+      <div class="sec-head">
+        <i class="ti ti-heart-handshake" aria-hidden="true"></i>
+        <h2>大会運営費の支援について</h2>
+      </div>
+      <div class="zamst-box">
+        <div class="zamst-logo-row">
+          <div class="zamst-brand">ZAMST</div>
+          <span class="zamst-label">大会応援プログラム</span>
+        </div>
+        <p class="zamst-body">スポーツ用サポーター・インソールブランド「ザムスト」が、大会運営費を支援する<strong>「大会応援プログラム」</strong>を実施しています。大会を開催する際の運営費用の一助としてご活用ください。</p>
+        <a class="zamst-link" href="https://www.zamst-online.jp/tournament-support-program/" target="_blank" rel="noopener">
+          <i class="ti ti-external-link" aria-hidden="true"></i> ザムスト 大会応援プログラムの詳細を見る ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- VOICES -->
+    <section class="section" aria-label="前回大会参加者の声">
+      <div class="sec-head">
+        <i class="ti ti-message-circle-2" aria-hidden="true"></i>
+        <h2>前回大会参加者（ミニバス保護者）の声</h2>
+      </div>
+      <div class="voices">
+        <div class="voice-card">
+          <div class="voice-quote-icon">"</div>
+          <p>スウィッシュカップの開催、本当にありがとうございました。部活でメンバーに選ばれない事が続き、自信を無くしているな…と感じていた所での今大会で、ベスト8まで行けた事がすごく嬉しく、すごく悔しかったようでもっと練習頑張る！！とバスケの熱が再びともったような姿に親として嬉しく、貴重な経験をさせて頂き感謝です。本当にありがとうございました。</p>
+        </div>
+        <div class="voice-card">
+          <div class="voice-quote-icon">"</div>
+          <p>次回は5年生になってしまって出られないのが寂しいです🥹　試合とはまた違う良い緊張感を味わえてドキドキしたところが楽しかったです！ありがとうございました😊</p>
+        </div>
+        <div class="voice-card">
+          <div class="voice-quote-icon">"</div>
+          <p>チームではまだまだ試合に出られない3年生の息子ですが、今回の緊張感がとても刺激になりヤル気が出たと言ってました。次回は入賞狙って頑張るそうです。ありがとうございました。</p>
+        </div>
+        <div class="voice-card">
+          <div class="voice-quote-icon">"</div>
+          <p>今回もお疲れ様でした！ホントにいい経験ができて幸せです！！</p>
+        </div>
+        <div class="voice-card">
+          <div class="voice-quote-icon">"</div>
+          <p>今回、初めて参加させていただきましたが、ベスト4に入ることができ、子供のバスケ熱が向上しました。ありがとうございました！またぜひ機会があれば参加させていただきたいです。（4年生なので、今年が最後かな…？）</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REQUEST -->
+    <section class="section" aria-label="お願い事項">
+      <div class="sec-head">
+        <i class="ti ti-hand-finger" aria-hidden="true"></i>
+        <h2>開催にあたってのお願い</h2>
+      </div>
+      <div class="request-list">
+        <div class="request-item">
+          <div class="request-num">1</div>
+          <div class="request-body">
+            <div class="request-title">大会ルールの遵守</div>
+            <p>大会ルールは全国共通にしたいため、必ずお守りいただきますようお願いいたします。</p>
+          </div>
+        </div>
+        <div class="request-item">
+          <div class="request-num">2</div>
+          <div class="request-body">
+            <div class="request-title">大会の写真・動画のご提出</div>
+            <p>大会の様子の動画や写真を あきひと社長のInstagramアカウントDMにてご提出をお願いいたします。当アカウントにて投稿させていただきます。なお、子どもたちの顔や名前などはわからないように加工します。</p>
+          </div>
+        </div>
+        <div class="request-item">
+          <div class="request-num">3</div>
+          <div class="request-body">
+            <div class="request-title">ベスト4以上の試合動画（任意）</div>
+            <p>可能でしたら、ベスト4以上の対戦は<a class="req-link" href="https://www.youtube.com/playlist?list=PLYn_wfYxehkOULXuISVJPTR7b6K8bcM9M" target="_blank" rel="noopener">前回大会</a>のようなアングル（選手の後ろから追跡）で動画撮影いただき、動画データのご提出をお願いいたします。編集してあきひと社長のSNSにて投稿させていただきます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="section" aria-label="前回大会の様子">
+      <div class="sec-head">
+        <i class="ti ti-device-tv" aria-hidden="true"></i>
+        <h2>前回大会の様子</h2>
+      </div>
+      <a class="prev-banner-link" href="https://www.youtube.com/playlist?list=PLYn_wfYxehkOULXuISVJPTR7b6K8bcM9M" target="_blank" rel="noopener" aria-label="前回大会の動画をYouTubeで見る">
+        <div class="prev-banner-wrap">
+          <img src="swish-cup-banner.png" alt="Swish Cup 2nd — 勝ち上がれ、君のシュート力で。" loading="lazy">
+          <div class="prev-banner-overlay">
+            <div class="prev-banner-play">
+              <i class="ti ti-brand-youtube" aria-hidden="true"></i>
+              <span>前回大会の動画を見る（14本）</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </section>
+
+    <footer class="foot">
+      <p>主催：ファイブファウル代表 あきひと社長</p>
+    </footer>
+
+  </div>
+</body>
+</html>
